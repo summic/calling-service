@@ -30,8 +30,16 @@ async fn build_table(
             Ok(())
         }
         Err(err) => {
-            eprintln!("  Error: {}", err);
-            Err(err.into())
+            let err_msg = err.to_string();
+            let err_dbg = format!("{err:?}");
+            if err_msg.contains("ResourceInUseException") || err_dbg.contains("ResourceInUseException")
+            {
+                eprintln!("  Table {} already exists; skipping.", table_name);
+                Ok(())
+            } else {
+                eprintln!("  Error: {}", err);
+                Err(err.into())
+            }
         }
     }
 }
