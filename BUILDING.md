@@ -8,8 +8,8 @@ or
 
     cargo run --bin calling_frontend
 
-You must specify a variety of command line arguments. See [backend config.rs file](/backend/src/config.rs) or
-[frontend config.rs file](/frontend/src/config.rs) for more details or run either with the `--help` option.
+You must specify a variety of command line arguments. See [backend config.rs file](backend/src/config.rs) or
+[frontend config.rs file](frontend/src/config.rs) for more details or run either with the `--help` option.
 
 ## Debugging with the Backend
 
