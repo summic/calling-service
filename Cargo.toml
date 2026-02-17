@@ -26,3 +26,11 @@ codegen-units = 1
 [patch.crates-io]
 # Use our fork of curve25519-dalek because we're using zkgroup.
 curve25519-dalek = { git = 'https://github.com/signalapp/curve25519-dalek', tag = 'signal-curve25519-4.1.3' }
+
+[patch.'https://github.com/signalapp/libsignal']
+libsignal-core = { path = "../../shared/libsignal/rust/core" }
+zkgroup = { path = "../../shared/libsignal/rust/zkgroup" }
+poksho = { path = "../../shared/libsignal/rust/poksho" }
+signal-crypto = { path = "../../shared/libsignal/rust/crypto" }
+libsignal-account-keys = { path = "../../shared/libsignal/rust/account-keys" }
+zkcredential = { path = "../../shared/libsignal/rust/zkcredential" }
